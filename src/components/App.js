@@ -38,10 +38,10 @@ const App = () => {
   }
 
   return (
-    <div>
+    <section className="app">
       <GemInput searchGem={searchGem} />
       <GemsContainer gems={gems} handleSave={handleSave} savedGems={savedGems} />
-    </div>
+    </section>
   );
 }
 

@@ -5,37 +5,50 @@ import SavedGems from './SavedGems';
 const styles = {
   container: {
     display: 'flex',
+    position: 'relative',
+    margin: '0 5vw',
   },
   gemResContainer: {
-    padding: '15px',
-    flexBasis: '75%',
-    display: 'grid',
-    gridTemplateColumns: 'auto auto',
-    gridGap: '1em'
+   
   },
   noRes: {
     textAlign: 'center',
+    color: '#FFF',
+    fontSize: '24px',
+    fontWeight: 'bold',
   },
   savedGemsContainer: {
-    flexBasis: '25%',
+    flexBasis: '28%',
+    height: '100%',
   }
 }
-
 const GemsContainer = ({ gems, handleSave, savedGems }) => {
   const gemComponents = gems.map((gem) => {
     const isSaved = savedGems[gem.name] ? true : false;
+
     return (
-      <Gem key={`gem-${gem.name}`} gem={gem} handleSave={handleSave} isSaved={isSaved} />
+      <Gem
+        key={`gem-${gem.name}`}
+        gem={gem}
+        handleSave={handleSave}
+        isSaved={isSaved}
+      />
     );
   })
 
   return (
-    <main style={styles.container}>
-      <section style={styles.gemResContainer}>
-        { gemComponents.length ? gemComponents : <p style={styles.noRes}>No Gems Found.</p> }
+    <main className="gems-container">
+      <section>
+        <h1>Gems</h1>
+        <section className="gems-results">
+          {gemComponents.length ? gemComponents : <p className="no-results">No Gems Found.</p>}
+        </section>
       </section>
       <aside style={styles.savedGemsContainer}>
-        <SavedGems savedGems={savedGems} handleSave={handleSave}/>
+        <SavedGems
+          savedGems={savedGems}
+          handleSave={handleSave}
+        />
       </aside>
     </main>
   );
