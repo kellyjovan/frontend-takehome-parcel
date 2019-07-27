@@ -1,5 +1,137 @@
-body {
-  font-family: Georgia;
+body, html, #root {
+  padding: 0;
   margin: 0;
-  padding: 50px;
+  height: 100%;
+  width: 100%;
+  background: #e9573f;
+}
+
+section, aside {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  display: 'flex';
+  flex-direction: column;
+  height: 100%;
+}
+
+.gem-input-container {
+  margin: 10px;
+  text-align: center;
+}
+
+.gem-input {
+  width: 80%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #FFF;
+  font-size: 24px;
+  color: #e9573f;
+}
+
+.gem-input:focus {
+  outline: none;
+}
+
+.gem-input::placeholder {
+  color: #e9573f;
+}
+
+.save-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #ae2a14;
+  color: #FFF;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #dc3519;
+}
+
+.gems-container { 
+  display: flex;
+  position: relative;
+  width: 80%;
+  padding: 0 10%;
+  height: 100%;
+}
+
+.gems-container > section {
+  flex-basis: 70%;
+  
+  flex-direction: column;
+}
+
+.gems-container > aside {
+  flex-basis: 28%;
+  
+}
+
+.gems-container h1 {
+  text-align: center;
+  color: #FFF;
+}
+
+.gems-results {
+  padding: 0 1em;
+  grid-gap: 1em;
+  color: #FFF;
+  overflow-y: auto;
+  margin: 1em 0;
+  flex-direction: column;
+}
+
+.no-results {
+  text-align: center;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.gem {
+  padding: 5px 15px;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 20px;
+  background: #000;
+  color: #FFF;
+}
+
+.gem > p {
+  flex-basis: 80%;
+  overflow-wrap: break-word;
+}
+
+.gem > div {
+  flex-basis: 20%;
+  text-align: right;
+}
+
+.saved-gems {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.saved-gems h1 {
+  color: '#FFF';
+  text-align: center;
+}
+
+.saved-gems > ul {
+  overflow-y: auto;
+  margin: 1em 0;
+  padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
